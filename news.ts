@@ -17,11 +17,13 @@ let HiddenItem = libs.mongoose.model<HiddenItemDocument>("HiddenItem", new libs.
 }));
 
 let app = libs.express();
+app.use(libs.bodyParser.json());
+app.use(libs.bodyParser.urlencoded({ extended: true }));
 
 app.get("/items", async (request, response) => {
     try {
         if (request.query.key !== settings.key) {
-            response.json(403, {
+            response.status(403).json({
                 isSuccess: false,
                 errorMessage: "a key is required",
             });
@@ -33,12 +35,41 @@ app.get("/items", async (request, response) => {
                 $gt: date
             }
         }).select("url").exec();
-        response.json(200, {
+        response.status(200).json({
             isSuccess: true,
             items: items.map(i=> i.url),
         });
     } catch (error) {
-        response.json(500, {
+        response.status(500).json({
+            isSuccess: false,
+            errorMessage: error,
+        });
+    }
+});
+
+app.post("/items", async (request, response) => {
+    try {
+        if (request.query.key !== settings.key) {
+            response.status(403).json({
+                isSuccess: false,
+                errorMessage: "a key is required",
+            });
+            return;
+        }
+        let url = request.body.url;
+
+        let hiddenItem = await HiddenItem.create({
+            createTime: Date.now(),
+            url: url,
+        });
+
+        hiddenItem.save();
+
+        response.status(200).json({
+            isSuccess: true
+        });
+    } catch (error) {
+        response.status(500).json({
             isSuccess: false,
             errorMessage: error,
         });

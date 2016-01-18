@@ -8,3 +8,5 @@ export {mongoose};
 
 import * as colors from "colors";
 export {colors};
+
+export let bodyParser = require("body-parser");
