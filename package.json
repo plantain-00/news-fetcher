@@ -17,10 +17,8 @@
   },
   "homepage": "https://github.com/plantain-00/news-fetcher#readme",
   "dependencies": {
+    "colors": "^1.1.2",
     "express": "^4.13.3",
-    "history": "^1.17.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-router": "^1.0.3"
+    "mongoose": "^4.3.6"
   }
 }

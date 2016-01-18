@@ -9,13 +9,19 @@
       "commit": "1ffc055e50f0df255da310485a7871c6f894e370"
     },
     "node/node.d.ts": {
-      "commit": "1ffc055e50f0df255da310485a7871c6f894e370"
+      "commit": "70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e"
     },
     "serve-static/serve-static.d.ts": {
       "commit": "1ffc055e50f0df255da310485a7871c6f894e370"
     },
     "mime/mime.d.ts": {
       "commit": "1ffc055e50f0df255da310485a7871c6f894e370"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e"
+    },
+    "colors/colors.d.ts": {
+      "commit": "70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e"
     }
   }
 }
