@@ -19,7 +19,7 @@
 create a file of `secret.ts`, like:
 
 ```typescript
-import * as settings from "./settings";
+const settings = require("./settings");
 
 export function load() {
     settings.key = "";
