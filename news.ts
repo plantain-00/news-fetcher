@@ -11,12 +11,12 @@ interface HiddenItemDocument extends libs.mongoose.Document {
 libs.mongoose.connect(settings.mongodb.url, settings.mongodb.options);
 libs.mongoose.connection.on("error", console.error.bind(console, "connection error:"));
 
-let HiddenItem = libs.mongoose.model<HiddenItemDocument>("HiddenItem", new libs.mongoose.Schema({
+const HiddenItem = libs.mongoose.model<HiddenItemDocument>("HiddenItem", new libs.mongoose.Schema({
     createTime: Number,
     url: String,
 }));
 
-let app = libs.express();
+const app = libs.express();
 app.use(libs.bodyParser.json());
 app.use(libs.bodyParser.urlencoded({ extended: true }));
 
@@ -29,8 +29,8 @@ app.get("/items", async (request, response) => {
             });
             return;
         }
-        let date = Date.now() - 7 * 24 * 3600 * 1000;
-        let items = await HiddenItem.find({
+        const date = Date.now() - 7 * 24 * 3600 * 1000;
+        const items = await HiddenItem.find({
             createTime: {
                 $gt: date
             }
@@ -56,9 +56,9 @@ app.post("/items", async (request, response) => {
             });
             return;
         }
-        let url = request.body.url;
+        const url = request.body.url;
 
-        let hiddenItem = await HiddenItem.create({
+        const hiddenItem = await HiddenItem.create({
             createTime: Date.now(),
             url: url,
         });
@@ -76,7 +76,7 @@ app.post("/items", async (request, response) => {
     }
 });
 
-let port = 9994;
+const port = 9994;
 app.listen(port, "localhost", () => {
     console.log(libs.colors.green(`api Server is listening: ${port}`));
 });
