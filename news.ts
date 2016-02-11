@@ -33,11 +33,11 @@ app.get("/items", async (request, response) => {
         const items = await HiddenItem.find({
             createTime: {
                 $gt: date
-            }
+            },
         }).select("url").exec();
         response.status(200).json({
             isSuccess: true,
-            items: items.map(i=> i.url),
+            items: items.map(i => i.url),
         });
     } catch (error) {
         response.status(500).json({
