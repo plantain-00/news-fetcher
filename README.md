@@ -12,7 +12,7 @@
 # development
 
 + `npm install`
-+ `node news.js`
++ `tsc && node news.js`
 
 # secure
 
