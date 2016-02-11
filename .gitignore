@@ -27,3 +27,4 @@ build/Release
 node_modules
 secret.ts
 **/*.js
+!gulpfile.js
