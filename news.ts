@@ -1,20 +1,12 @@
 import * as libs from "./libs";
-import * as settings from "./settings";
 
-import Schema = libs.mongoose.Schema;
-
-interface HiddenItemDocument extends libs.mongoose.Document {
+interface HiddenItem {
     createTime: number;
     url: string;
 }
 
-libs.mongoose.connect(settings.mongodb.url, settings.mongodb.options);
-libs.mongoose.connection.on("error", console.error.bind(console, "connection error:"));
-
-const HiddenItem = libs.mongoose.model<HiddenItemDocument>("HiddenItem", new libs.mongoose.Schema({
-    createTime: Number,
-    url: String,
-}));
+const key: string = process.env.NEWS_FETCHER_KEY;
+let items: HiddenItem[] = [];
 
 const app = libs.express();
 app.use(libs.bodyParser.json());
@@ -22,7 +14,7 @@ app.use(libs.bodyParser.urlencoded({ extended: true }));
 
 app.get("/items", async (request, response) => {
     try {
-        if (request.query.key !== settings.key) {
+        if (request.query.key !== key) {
             response.status(403).json({
                 isSuccess: false,
                 errorMessage: "a key is required",
@@ -30,11 +22,7 @@ app.get("/items", async (request, response) => {
             return;
         }
         const date = Date.now() - 7 * 24 * 3600 * 1000;
-        const items = await HiddenItem.find({
-            createTime: {
-                $gt: date
-            },
-        }).select("url").exec();
+        items = items.filter(item => item.createTime > date);
         response.status(200).json({
             isSuccess: true,
             items: items.map(i => i.url),
@@ -49,21 +37,18 @@ app.get("/items", async (request, response) => {
 
 app.post("/items", async (request, response) => {
     try {
-        if (request.query.key !== settings.key) {
+        if (request.query.key !== key) {
             response.status(403).json({
                 isSuccess: false,
                 errorMessage: "a key is required",
             });
             return;
         }
-        const url = request.body.url;
 
-        const hiddenItem = await HiddenItem.create({
+        items.push({
             createTime: Date.now(),
-            url: url,
+            url: request.body.url,
         });
-
-        hiddenItem.save();
 
         response.status(200).json({
             isSuccess: true
@@ -77,6 +62,6 @@ app.post("/items", async (request, response) => {
 });
 
 const port = 9994;
-app.listen(port, "localhost", () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(libs.colors.green(`api Server is listening: ${port}`));
 });

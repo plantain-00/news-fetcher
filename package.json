@@ -16,7 +16,7 @@
     "url": "https://github.com/plantain-00/news-fetcher/issues"
   },
   "homepage": "https://github.com/plantain-00/news-fetcher#readme",
-  "devDependencies":{
+  "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-tslint": "^4.3.1",
     "tslint": "^3.2.1",
@@ -25,7 +25,6 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "colors": "^1.1.2",
-    "express": "^4.13.3",
-    "mongoose": "^4.3.6"
+    "express": "^4.13.3"
   }
 }
