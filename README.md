@@ -14,6 +14,7 @@
 + `npm install`
 + `tsc && gulp tslint`
 + `node news.js`
++ add environment variable NEWS_FETCHER_KEY
 
 # secure
 

@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - "4.1"
+  - "4.4"
 before_script:
   - npm install -g gulp
-  - npm install -g typescript@next
+  - npm install -g typescript
 script:
   - tsc && gulp tslint
 env:
