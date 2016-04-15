@@ -51,7 +51,7 @@ app.post("/items", async (request, response) => {
         });
 
         response.status(200).json({
-            isSuccess: true
+            isSuccess: true,
         });
     } catch (error) {
         response.status(500).json({

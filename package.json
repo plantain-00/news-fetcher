@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/plantain-00/news-fetcher#readme",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-tslint": "^4.3.1",
-    "tslint": "^3.2.1",
-    "typescript": "^1.7.5"
+    "gulp": "^3.9.1",
+    "gulp-tslint": "^4.3.5",
+    "tslint": "^3.7.4",
+    "typescript": "^1.8.10"
   },
   "dependencies": {
     "body-parser": "^1.14.2",
