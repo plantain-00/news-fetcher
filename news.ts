@@ -63,5 +63,5 @@ app.post("/items", async (request, response) => {
 
 const port = 9994;
 app.listen(port, "0.0.0.0", () => {
-    console.log(libs.colors.green(`api Server is listening: ${port}`));
+    libs.green(`api Server is listening: ${port}`);
 });
