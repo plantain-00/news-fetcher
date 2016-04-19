@@ -7,32 +7,12 @@
 + node.js >=4
 + typescript
 + gulp
-+ mongodb
++ tsd
 
 # development
 
 + `npm install`
++ `tsd install`
 + `tsc && gulp tslint`
 + `node news.js`
 + add environment variable NEWS_FETCHER_KEY
-
-# secure
-
-create a file of `secret.ts`, like:
-
-```typescript
-const settings = require("./settings");
-
-export function load() {
-    settings.key = "";
-    settings.mongodb = {
-        url: "",
-        options: {
-            user: "",
-            pass: "",
-        },
-    };
-}
-
-```
-
