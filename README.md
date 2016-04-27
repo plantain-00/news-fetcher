@@ -4,7 +4,6 @@
 
 # tools and global npm packages
 
-+ node.js >=4
 + typescript
 + gulp
 + tsd

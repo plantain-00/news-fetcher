@@ -18,7 +18,7 @@
   "homepage": "https://github.com/plantain-00/news-fetcher#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-tslint": "^4.3.5",
+    "gulp-tslint": "^5.0.0",
     "tslint": "^3.7.4",
     "typescript": "^1.8.10"
   },
@@ -26,5 +26,8 @@
     "body-parser": "^1.14.2",
     "colors": "^1.1.2",
     "express": "^4.13.3"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
