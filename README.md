@@ -4,14 +4,12 @@
 
 # tools and global npm packages
 
-+ typescript
-+ gulp
-+ tsd
++ `npm i -g typescript tsd tslint pm2 check-npm`
 
 # development
 
-+ `npm install`
++ `npm i`
 + `tsd install`
-+ `tsc && gulp tslint`
++ `tsc && npm run tslint`
 + `node news.js`
 + add environment variable NEWS_FETCHER_KEY

@@ -2,9 +2,10 @@
   "name": "news-fetcher",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "news.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tslint": "tslint '*.ts'",
+    "check": "npm-check -u"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,6 @@
     "url": "https://github.com/plantain-00/news-fetcher/issues"
   },
   "homepage": "https://github.com/plantain-00/news-fetcher#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-tslint": "^5.0.0",
-    "tslint": "^3.7.4",
-    "typescript": "^1.8.10"
-  },
   "dependencies": {
     "body-parser": "^1.14.2",
     "colors": "^1.1.2",
