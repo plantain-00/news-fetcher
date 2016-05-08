@@ -4,12 +4,12 @@
 
 # tools and global npm packages
 
-+ `npm i -g typescript tsd tslint pm2 check-npm`
++ `npm run init`
 
 # development
 
-+ `npm i`
-+ `tsd install`
-+ `tsc && npm run tslint`
++ `npm run restore`
++ `tsc`
++ `npm run tslint`
 + `node news.js`
 + add environment variable NEWS_FETCHER_KEY
