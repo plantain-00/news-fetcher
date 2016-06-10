@@ -5,7 +5,6 @@
   "main": "news.js",
   "scripts": {
     "tslint": "tslint '*.ts'",
-    "check": "npm-check -u",
     "init": "npm i -g typescript tsd tslint npm-check",
     "restore": "tsd install && npm i"
   },
