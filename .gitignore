@@ -27,3 +27,5 @@ build/Release
 node_modules
 **/*.js
 typings
+*.js.map
+.vscode

@@ -8,7 +8,7 @@
 
 # development
 
-+ `npm run restore`
++ `npm i`
 + `tsc`
 + `npm run tslint`
 + `node news.js`
