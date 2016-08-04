@@ -2,14 +2,10 @@
 [![devDependency Status](https://david-dm.org/plantain-00/news-fetcher/dev-status.svg)](https://david-dm.org/plantain-00/news-fetcher#info=devDependencies)
 [![Build Status](https://travis-ci.org/plantain-00/news-fetcher.svg?branch=master)](https://travis-ci.org/plantain-00/news-fetcher)
 
-# tools and global npm packages
-
-+ `npm run init`
-
 # development
 
 + `npm i`
-+ `tsc`
++ `npm run build`
 + `npm run tslint`
 + `node news.js`
 + add environment variable NEWS_FETCHER_KEY
