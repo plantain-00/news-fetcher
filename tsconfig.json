@@ -7,7 +7,9 @@
         "noUnusedLocals": true,
         "noImplicitThis": true,
         "strictNullChecks": true,
-        "noImplicitReturns": true
+        "noImplicitReturns": true,
+        "outDir": "dist",
+        "declaration": true
     },
     "exclude": [
         "node_modules"
