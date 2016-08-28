@@ -9,3 +9,6 @@ export function green(message: string) {
 
 import * as bodyParser from "body-parser";
 export { bodyParser };
+
+import * as multer from "multer";
+export { multer };

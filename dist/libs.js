@@ -8,4 +8,6 @@ function green(message) {
 exports.green = green;
 const bodyParser = require("body-parser");
 exports.bodyParser = bodyParser;
+const multer = require("multer");
+exports.multer = multer;
 //# sourceMappingURL=libs.js.map
