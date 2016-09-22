@@ -12,3 +12,6 @@ export { bodyParser };
 
 import * as multer from "multer";
 export { multer };
+
+import { __awaiter } from "tslib";
+export { __awaiter };

@@ -10,4 +10,6 @@ const bodyParser = require("body-parser");
 exports.bodyParser = bodyParser;
 const multer = require("multer");
 exports.multer = multer;
+const tslib_1 = require("tslib");
+exports.__awaiter = tslib_1.__awaiter;
 //# sourceMappingURL=libs.js.map

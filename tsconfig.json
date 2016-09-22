@@ -9,7 +9,8 @@
         "strictNullChecks": true,
         "noImplicitReturns": true,
         "outDir": "dist",
-        "declaration": true
+        "declaration": true,
+        "noEmitHelpers": true
     },
     "exclude": [
         "node_modules"

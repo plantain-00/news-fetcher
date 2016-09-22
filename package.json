@@ -21,7 +21,8 @@
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
     "express": "^4.14.0",
-    "multer": "^1.2.0"
+    "multer": "^1.2.0",
+    "tslib": "^1.0.0"
   },
   "engines": {
     "node": ">=6.0.0"
