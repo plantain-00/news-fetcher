@@ -5,7 +5,7 @@
   "main": "dist/news.js",
   "scripts": {
     "lint": "tslint \"src/*.ts\"",
-    "build": "tsc"
+    "build": "rimraf dist && tsc -p src"
   },
   "repository": {
     "type": "git",
@@ -31,8 +31,9 @@
     "@types/body-parser": "1.16.2",
     "@types/express": "4.0.35",
     "@types/multer": "0.0.33",
+    "rimraf": "2.6.1",
     "tslint": "5.0.0",
-    "typescript": "2.2.2"
+    "typescript": "2.3.2"
   },
   "types": "./dist/news.d.ts"
 }
