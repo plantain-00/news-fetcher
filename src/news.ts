@@ -1,9 +1,9 @@
 import * as libs from "./libs";
 
-export interface HiddenItem {
+export type HiddenItem = {
     createTime: number;
     url: string;
-}
+};
 
 const key: string = process.env.NEWS_FETCHER_KEY;
 export let items: HiddenItem[] = [];

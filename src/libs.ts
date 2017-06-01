@@ -1,9 +1,11 @@
 import * as express from "express";
 export { express };
 
+// tslint:disable-next-line:no-var-requires
 const colors = require("colors");
 
 export function green(message: string) {
+    // tslint:disable-next-line:no-console
     console.log(colors.green(message));
 }
 
