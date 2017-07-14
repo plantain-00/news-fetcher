@@ -5,7 +5,7 @@
 #### install
 
 ```bash
-git clone -b release https://github.com/plantain-00/news-fetcher.git . --depth=1 && npm i --production
+git clone https://github.com/plantain-00/news-fetcher-release.git . --depth=1 && npm i --production
 ```
 
 Set environment variable NEWS_FETCHER_KEY
