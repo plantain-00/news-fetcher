@@ -13,7 +13,9 @@ module.exports = {
   ],
   fix: {
     ts: `tslint --fix "src/**/*.ts"`,
-    js: `standard --fix "**/*.config.js"`
+    js: `standard --fix "**/*.config.js"`,
+    export: `no-unused-export "src/**/*.ts"`
   },
-  release: `clean-release`
+  release: `clean-release`,
+  watch: `watch-then-execute "src/**/*.ts" --script "npm run build"`
 }
