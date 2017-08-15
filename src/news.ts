@@ -15,7 +15,7 @@ function assert(condition: any, statusCode: number, errorMessage: string) {
     }
 }
 
-export async function bind(app: libs.express.Application, method: string, path: string, handler: (request: libs.express.Request, response: libs.express.Response) => Promise<void>, upload?: libs.multer.Instance) {
+export async function bind(app: libs.express.Application, method: "get" | "post", path: string, handler: (request: libs.express.Request, response: libs.express.Response) => Promise<void>, upload?: libs.multer.Instance) {
     async function handle(request: libs.express.Request, response: libs.express.Response) {
         try {
             assert(request.query.key === key, 403, "a key is required");
@@ -28,9 +28,9 @@ export async function bind(app: libs.express.Application, method: string, path: 
         }
     }
     if (upload) {
-        (app as any)[method](path, upload.any(), handle);
+        app[method](path, upload.any(), handle);
     } else {
-        (app as any)[method](path, handle);
+        app[method](path, handle);
     }
 }
 
