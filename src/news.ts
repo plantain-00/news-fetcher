@@ -1,12 +1,12 @@
 import * as libs from "./libs";
 
-export type HiddenItem = {
+type HiddenItem = {
     createTime: number;
     url: string;
 };
 
 const key: string = process.env.NEWS_FETCHER_KEY;
-export let items: HiddenItem[] = [];
+let items: HiddenItem[] = [];
 let rawSources: any[];
 
 function assert(condition: any, statusCode: number, errorMessage: string) {

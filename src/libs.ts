@@ -1,7 +1,7 @@
 import * as express from "express";
 export { express };
 
-import * as colors from "colors";
+import colors = require("colors");
 
 export function green(message: string) {
     // tslint:disable-next-line:no-console
