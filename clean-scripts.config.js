@@ -14,6 +14,27 @@ module.exports = {
     'tsc -p spec',
     'jasmine',
     () => new Promise((resolve, reject) => {
+      const fetch = require('node-fetch')
+      const server = childProcess.spawn('node', ['./dist/start.js'])
+      server.stdout.pipe(process.stdout)
+      server.stderr.pipe(process.stderr)
+      setTimeout(() => {
+        fetch('http://localhost:9994/items')
+          .then(res => {
+            res.text().then(text => {
+              if (text !== '{"isSuccess":true,"items":[]}') {
+                throw new Error('Error when get items')
+              }
+              server.kill('SIGINT')
+              resolve()
+            })
+          }, error => {
+            server.kill('SIGINT')
+            reject(error)
+          })
+      }, 1000)
+    }),
+    () => new Promise((resolve, reject) => {
       childProcess.exec('git status -s', (error, stdout, stderr) => {
         if (error) {
           reject(error)
