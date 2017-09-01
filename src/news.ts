@@ -5,7 +5,7 @@ type HiddenItem = {
     url: string;
 };
 
-const key: string = process.env.NEWS_FETCHER_KEY;
+const key = process.env.NEWS_FETCHER_KEY;
 let items: HiddenItem[] = [];
 let rawSources: any[];
 
