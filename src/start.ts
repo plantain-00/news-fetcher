@@ -15,3 +15,11 @@ const port = 9994;
 app.listen(port, "0.0.0.0", () => {
     libs.green(`api Server is listening: ${port}`);
 });
+
+process.on("SIGINT", () => {
+    process.exit();
+});
+
+process.on("SIGTERM", () => {
+    process.exit();
+});
