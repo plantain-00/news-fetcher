@@ -1,5 +1,5 @@
 const childProcess = require('child_process')
-const { sleep } = require('clean-scripts')
+const { sleep, Service } = require('clean-scripts')
 const util = require('util')
 
 const execAsync = util.promisify(childProcess.exec)
@@ -17,43 +17,10 @@ module.exports = {
   test: [
     'tsc -p spec',
     'jasmine',
-    async () => {
-      const fetch = require('node-fetch')
-      const server = childProcess.spawn('node', ['./dist/start.js'])
-      server.stdout.pipe(process.stdout)
-      server.stderr.pipe(process.stderr)
-      await sleep(1000)
-      try {
-        const res = await fetch('http://localhost:9994/items')
-        const text = await res.text()
-        if (text !== '{"isSuccess":true,"items":[]}') {
-          throw new Error('Error when get items')
-        }
-
-        const saveResponse = await fetch('http://localhost:9994/items', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: '{"url": "http://localhost"}'
-        })
-        const saveText = await saveResponse.text()
-        if (saveText !== '{"isSuccess":true}') {
-          throw new Error('Error when save items')
-        }
-
-        const responseAfterSave = await fetch('http://localhost:9994/items')
-        const textAfterSave = await responseAfterSave.text()
-        if (textAfterSave !== '{"isSuccess":true,"items":["http://localhost"]}') {
-          throw new Error('Error when get items after save')
-        }
-
-        server.kill('SIGINT')
-      } catch (error) {
-        server.kill('SIGINT')
-        throw error
-      }
-    },
+    'tsc -p test',
+    new Service('node ./dist/start.js'),
+    () => sleep(1000),
+    'node test/index.js',
     async () => {
       const { stdout } = await execAsync('git status -s')
       if (stdout) {
