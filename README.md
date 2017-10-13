@@ -16,3 +16,9 @@ node dist/start.js
 ```
 
 Then open `http://localhost:9994` in your browser.
+
+#### docker
+
+```bash
+docker run -d -p 9994:9994 plantain/news-fetcher
+```
