@@ -8,7 +8,6 @@
     "lint": "clean-scripts lint",
     "test": "clean-scripts test",
     "fix": "clean-scripts fix",
-    "release": "clean-scripts release",
     "watch": "clean-scripts watch"
   },
   "repository": {
@@ -39,7 +38,6 @@
     "@types/jasmine": "2.8.2",
     "@types/multer": "1.3.6",
     "@types/node-fetch": "1.6.7",
-    "clean-release": "1.3.5",
     "clean-scripts": "1.7.0",
     "jasmine": "2.8.0",
     "no-unused-export": "1.4.3",

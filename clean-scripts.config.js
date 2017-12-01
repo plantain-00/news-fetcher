@@ -29,6 +29,5 @@ module.exports = {
     ts: `tslint --fix ${tsFiles}`,
     js: `standard --fix ${jsFiles}`
   },
-  release: `clean-release`,
   watch: `${tscSrcCommand} --watch`
 }
