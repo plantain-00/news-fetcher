@@ -2,11 +2,7 @@ import * as express from "express";
 export { express };
 
 import colors = require("colors");
-
-export function green(message: string) {
-    // tslint:disable-next-line:no-console
-    console.log(colors.green(message));
-}
+export { colors };
 
 import * as bodyParser from "body-parser";
 export { bodyParser };

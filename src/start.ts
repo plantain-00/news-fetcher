@@ -13,7 +13,7 @@ news.bind(app, "post", "/logs", news.errorReport, upload);
 
 const port = 9994;
 app.listen(port, "0.0.0.0", () => {
-    libs.green(`api Server is listening: ${port}`);
+    console.log(libs.colors.green(`api Server is listening: ${port}`));
 });
 
 process.on("SIGINT", () => {

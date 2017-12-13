@@ -1,3 +1,3 @@
 declare module "colors" {
-    export function green(message: string): void;
+    export function green(message: string): string;
 }
