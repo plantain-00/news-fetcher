@@ -1,3 +1,3 @@
-declare module "colors" {
-    export function green(message: string): string;
+declare module 'colors' {
+    export function green (message: string): string
 }
