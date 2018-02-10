@@ -1,13 +1,13 @@
-import * as express from 'express'
+import express from 'express'
 export { express }
 
-import colors = require('colors')
+import colors from 'colors'
 export { colors }
 
 import * as bodyParser from 'body-parser'
 export { bodyParser }
 
-import * as multer from 'multer'
+import multer from 'multer'
 export { multer }
 
 import { __awaiter } from 'tslib'
