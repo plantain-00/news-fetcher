@@ -8,6 +8,7 @@ module.exports = {
   ],
   exclude: [
   ],
+  askVersion: true,
   releaseRepository: 'https://github.com/plantain-00/news-fetcher-release.git',
   postScript: [
     'cd "[dir]" && rm -rf .git',
