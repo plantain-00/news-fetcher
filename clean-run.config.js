@@ -1,11 +1,12 @@
 module.exports = {
   include: [
     'dist/*.js',
-    'package.json'
+    'package.json',
+    'yarn.lock'
   ],
   exclude: [
   ],
   postScript: [
-    'cd "[dir]" && npm i --production && node dist/start.js'
+    'cd "[dir]" && yarn --production && node dist/start.js'
   ]
 }
