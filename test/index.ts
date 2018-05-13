@@ -1,13 +1,15 @@
 import fetch from 'node-fetch'
 
-(async () => {
-  const res = await fetch('http://localhost:9994/items')
+const backendUrl = 'http://localhost:9994/items';
+
+(async() => {
+  const res = await fetch(backendUrl)
   const text = await res.text()
   if (text !== '{"isSuccess":true,"items":[]}') {
     throw new Error('Error when get items')
   }
 
-  const saveResponse = await fetch('http://localhost:9994/items', {
+  const saveResponse = await fetch(backendUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
