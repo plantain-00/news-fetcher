@@ -21,10 +21,10 @@ module.exports = {
     'tsc -p spec',
     'jasmine',
     'tsc -p test',
+    new Program('clean-release --config clean-run.config.js', 30000),
     new Service('node ./dist/start.js'),
     () => sleep(1000),
-    'node test/index.js',
-    new Program('clean-release --config clean-run.config.js', 30000)
+    'node test/index.js'
   ],
   fix: {
     ts: `tslint --fix ${tsFiles}`,
