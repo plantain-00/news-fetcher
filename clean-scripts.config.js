@@ -1,4 +1,4 @@
-const { sleep, Service } = require('clean-scripts')
+const { sleep, Service, Program } = require('clean-scripts')
 
 const tsFiles = `"src/**/*.ts" "spec/**/*.ts" "test/**/*.ts"`
 const jsFiles = `"*.config.js"`
@@ -23,7 +23,8 @@ module.exports = {
     'tsc -p test',
     new Service('node ./dist/start.js'),
     () => sleep(1000),
-    'node test/index.js'
+    'node test/index.js',
+    new Program('clean-release --config clean-run.config.js', 30000)
   ],
   fix: {
     ts: `tslint --fix ${tsFiles}`,
