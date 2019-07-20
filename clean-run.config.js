@@ -7,6 +7,6 @@ module.exports = {
   exclude: [
   ],
   postScript: [
-    'cd "[dir]" && yarn --production && node dist/start.js'
+    'cd "[dir]" && yarn --production && node dist/start.js -p 7676'
   ]
 }
