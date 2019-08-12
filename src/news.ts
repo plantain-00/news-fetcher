@@ -1,6 +1,6 @@
 import * as libs from './libs'
 
-type HiddenItem = {
+interface HiddenItem {
   createTime: number;
   url: string;
 }
