@@ -33,19 +33,19 @@
     "node": ">=6.0.0"
   },
   "typeCoverage": {
-    "atLeast": 88.6
+    "atLeast": 89.87
   },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@types/body-parser": "1.19.0",
-    "@types/express": "4.17.2",
-    "@types/jasmine": "3.5.7",
+    "@types/express": "4.17.3",
+    "@types/jasmine": "3.5.8",
     "@types/minimist": "1.2.0",
     "@types/multer": "1.4.2",
     "@types/node-fetch": "2.5.5",
-    "@typescript-eslint/eslint-plugin": "2.21.0",
-    "@typescript-eslint/parser": "2.21.0",
+    "@typescript-eslint/eslint-plugin": "2.22.0",
+    "@typescript-eslint/parser": "2.22.0",
     "clean-release": "2.7.1",
     "clean-scripts": "1.12.1",
     "eslint": "6.8.0",
