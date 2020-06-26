@@ -1,7 +1,6 @@
 import { sleep, Service, Program } from 'clean-scripts'
 
 const tsFiles = `"src/**/*.ts" "test/**/*.ts"`
-const jsFiles = `"*.config.js"`
 
 const tscSrcCommand = `tsc -p src`
 
@@ -11,9 +10,8 @@ export default {
     tscSrcCommand
   ],
   lint: {
-    ts: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles}`,
+    ts: `eslint --ext .js,.ts,.tsx ${tsFiles}`,
     export: `no-unused-export ${tsFiles}`,
-    commit: `commitlint --from=HEAD~1`,
     markdown: `markdownlint README.md`,
     typeCoverage: 'type-coverage -p src'
   },
@@ -23,6 +21,6 @@ export default {
     () => sleep(1000),
     'ts-node test/index.ts'
   ],
-  fix: `eslint --ext .js,.ts,.tsx ${tsFiles} ${jsFiles} --fix`,
+  fix: `eslint --ext .js,.ts,.tsx ${tsFiles} --fix`,
   watch: `${tscSrcCommand} --watch`
 }
