@@ -33,7 +33,7 @@
     "node": ">=6.0.0"
   },
   "typeCoverage": {
-    "atLeast": 89.87
+    "atLeast": 93.33
   },
   "devDependencies": {
     "@types/body-parser": "1.19.0",

@@ -20,7 +20,10 @@ export async function bind(app: libs.express.Application, method: 'get' | 'post'
     try {
       assert(request.query.key === key, 403, 'a key is required')
       await handler(request, response)
-    } catch (error) {
+    } catch (error: unknown) {
+      if (!Array.isArray(error)) {
+        return
+      }
       response.status(error[0]).json({
         isSuccess: false,
         errorMessage: error[1]
